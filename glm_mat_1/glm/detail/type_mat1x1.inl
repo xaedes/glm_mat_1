@@ -39,20 +39,6 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<1, 1, T, Q>::mat
-	(
-		T x0
-	)
-#		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(x0)}
-#		endif
-	{
-#		if !GLM_HAS_INITIALIZER_LISTS
-			this->value[0] = col_type(x0);
-#		endif
-	}
-
-	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<1, 1, T, Q>::mat(col_type const& v0)
 #		if GLM_HAS_INITIALIZER_LISTS
 			: value{col_type(v0)}
@@ -67,7 +53,7 @@ namespace glm
 
 	template<typename T, qualifier Q>
 	template<
-		typename X0
+		typename X0>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<1, 1, T, Q>::mat
 	(
 		X0 x0

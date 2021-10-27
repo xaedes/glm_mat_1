@@ -1,12 +1,16 @@
-/// @ref core
+/// @ref ext_matrix_mat1
 /// @file glm/detail/type_mat1x2.hpp
 
 #pragma once
 
 #include <glm/detail/type_vec1.hpp>
 #include <glm/detail/type_vec2.hpp>
+
+#include "glm/detail/setup_mat1.hpp"
+
 #include <limits>
 #include <cstddef>
+
 
 namespace glm
 {
@@ -40,7 +44,7 @@ namespace glm
 		GLM_FUNC_DECL explicit GLM_CONSTEXPR mat(T scalar);
 		GLM_FUNC_DECL GLM_CONSTEXPR mat(
 			T x0, T y0);
-		GLM_FUNC_DECL GLM_CONSTEXPR mat(
+		GLM_FUNC_DECL explicit GLM_CONSTEXPR mat(
 			col_type const& v0);
 
 		// -- Conversions --
@@ -51,7 +55,7 @@ namespace glm
 			X1 x1, Y1 y1);
 
 		template<typename V1>
-		GLM_FUNC_DECL GLM_CONSTEXPR mat(
+		GLM_FUNC_DECL explicit GLM_CONSTEXPR mat(
 			vec<2, V1, Q> const& v1);
 
 		// -- Matrix conversions --
@@ -142,10 +146,20 @@ namespace glm
 	GLM_FUNC_DECL mat<2, 2, T, Q> operator*(mat<1, 2, T, Q> const& m1, mat<2, 1, T, Q> const& m2);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL mat<3, 2, T, Q> operator*(mat<1, 2, T, Q> const& m1,	mat<3, 1, T, Q> const& m2);
+	GLM_FUNC_DECL mat<3, 2, T, Q> operator*(mat<1, 2, T, Q> const& m1, mat<3, 1, T, Q> const& m2);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL mat<4, 2, T, Q> operator*(mat<1, 2, T, Q> const& m1,	mat<4, 1, T, Q> const& m2);
+	GLM_FUNC_DECL mat<4, 2, T, Q> operator*(mat<1, 2, T, Q> const& m1, mat<4, 1, T, Q> const& m2);
+
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_DECL mat<1, 2, T, Q> operator*(mat<2, 2, T, Q> const& m1, mat<1, 2, T, Q> const& m2);
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_DECL mat<1, 3, T, Q> operator*(mat<2, 3, T, Q> const& m1, mat<1, 2, T, Q> const& m2);
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_DECL mat<1, 4, T, Q> operator*(mat<2, 4, T, Q> const& m1, mat<1, 2, T, Q> const& m2);
 
 
 	template<typename T, qualifier Q>

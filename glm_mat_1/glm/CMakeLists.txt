@@ -42,6 +42,7 @@ source_group("SIMD Files" FILES ${SIMD_SOURCE})
 source_group("SIMD Files" FILES ${SIMD_INLINE})
 source_group("SIMD Files" FILES ${SIMD_HEADER})
 
+find_package(glm REQUIRED)    
 add_library(glm_mat_1 INTERFACE)
 target_include_directories(glm_mat_1 INTERFACE ../)
 target_link_libraries(glm_mat_1 INTERFACE glm::glm)

@@ -8,6 +8,7 @@ enable_testing()
 add_subdirectory(glm)
 add_library(glm_mat_1::glm_mat_1 ALIAS glm_mat_1)
 
+
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_subdirectory(test)

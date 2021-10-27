@@ -1,3 +1,13 @@
+/// @ref ext_fwd_mat1
+/// @file glm/ext/fwd_mat1.hpp
+///
+/// @defgroup ext_fwd_mat1 GLM_EXT_fwd_mat1
+/// @ingroup ext
+//////
+/// Defines a number of matrices with one column or one row.
+///
+/// Include <glm/ext/fwd_mat1.hpp> to use these core features.
+
 #pragma once
 
 #include <glm/detail/qualifier.hpp>

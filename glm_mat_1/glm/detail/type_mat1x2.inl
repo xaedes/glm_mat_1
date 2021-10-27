@@ -500,6 +500,33 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<1, 2, T, Q> operator*(mat<2, 2, T, Q> const& m1, mat<1, 2, T, Q> const& m2)
+	{
+		return mat<1, 2, T, Q>(
+			m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1],
+			m1[0][1] * m2[0][0] + m1[1][1] * m2[0][1]);
+	}
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<1, 3, T, Q> operator*(mat<2, 3, T, Q> const& m1, mat<1, 2, T, Q> const& m2)
+	{
+		return mat<1, 3, T, Q>(
+			m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1],
+			m1[0][1] * m2[0][0] + m1[1][1] * m2[0][1],
+			m1[0][2] * m2[0][0] + m1[1][2] * m2[0][1]);
+	}
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<1, 4, T, Q> operator*(mat<2, 4, T, Q> const& m1, mat<1, 2, T, Q> const& m2)
+	{
+		return mat<1, 4, T, Q>(
+			m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1],
+			m1[0][1] * m2[0][0] + m1[1][1] * m2[0][1],
+			m1[0][2] * m2[0][0] + m1[1][2] * m2[0][1],
+			m1[0][3] * m2[0][0] + m1[1][3] * m2[0][1]);
+	}
+
+	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<1, 2, T, Q> operator/(mat<1, 2, T, Q> const& m,	T scalar)
 	{
 		return mat<1, 2, T, Q>(m[0] / scalar);

@@ -1,14 +1,15 @@
-/// @ref core
+/// @ref ext_matrix_mat1
 /// @file glm/detail/type_mat3x1.hpp
 
 #pragma once
 
 #include <glm/detail/type_vec1.hpp>
 #include <glm/detail/type_vec3.hpp>
+
+#include "glm/detail/setup_mat1.hpp"
+
 #include <limits>
 #include <cstddef>
-
-#include <type_traits>
 
 namespace glm
 {
@@ -80,12 +81,11 @@ namespace glm
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<2, 2, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<2, 3, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<2, 4, T, Q> const& x);
-		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<2, 4, T, Q> const& x);
 		// GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<3, 1, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<3, 2, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<3, 3, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<3, 4, T, Q> const& x);
-		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<4, 1, T, P> const& m);
+		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<4, 1, T, Q> const& m);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<4, 2, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<4, 3, T, Q> const& x);
 		GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR mat(mat<4, 4, T, Q> const& x);
