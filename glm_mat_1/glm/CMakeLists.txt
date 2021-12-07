@@ -47,26 +47,28 @@ add_library(glm_mat_1 INTERFACE)
 target_include_directories(glm_mat_1 INTERFACE ../)
 target_link_libraries(glm_mat_1 INTERFACE glm::glm)
 
-if(BUILD_STATIC_LIBS)
-add_library(glm_mat_1_static STATIC ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
-	${ROOT_SOURCE}    ${ROOT_INLINE}    ${ROOT_HEADER}
-	${CORE_SOURCE}    ${CORE_INLINE}    ${CORE_HEADER}
-	${EXT_SOURCE}     ${EXT_INLINE}     ${EXT_HEADER}
-	${GTC_SOURCE}     ${GTC_INLINE}     ${GTC_HEADER}
-	${GTX_SOURCE}     ${GTX_INLINE}     ${GTX_HEADER}
-	${SIMD_SOURCE}    ${SIMD_INLINE}    ${SIMD_HEADER})
-	target_link_libraries(glm_mat_1_static PUBLIC glm_mat_1)
-	add_library(glm_mat_1::glm_mat_1_static ALIAS glm_mat_1_static)
-endif()
+# without any cpp files in the library it makes no sense to build static or shared libs.
+#
+# if(BUILD_STATIC_LIBS)
+# add_library(glm_mat_1_static STATIC ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
+# 	${ROOT_SOURCE}    ${ROOT_INLINE}    ${ROOT_HEADER}
+# 	${CORE_SOURCE}    ${CORE_INLINE}    ${CORE_HEADER}
+# 	${EXT_SOURCE}     ${EXT_INLINE}     ${EXT_HEADER}
+# 	${GTC_SOURCE}     ${GTC_INLINE}     ${GTC_HEADER}
+# 	${GTX_SOURCE}     ${GTX_INLINE}     ${GTX_HEADER}
+# 	${SIMD_SOURCE}    ${SIMD_INLINE}    ${SIMD_HEADER})
+# 	target_link_libraries(glm_mat_1_static PUBLIC glm_mat_1)
+# 	add_library(glm_mat_1::glm_mat_1_static ALIAS glm_mat_1_static)
+# endif()
 
-if(BUILD_SHARED_LIBS)
-add_library(glm_mat_1_shared SHARED ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
-	${ROOT_SOURCE}    ${ROOT_INLINE}    ${ROOT_HEADER}
-	${CORE_SOURCE}    ${CORE_INLINE}    ${CORE_HEADER}
-	${EXT_SOURCE}     ${EXT_INLINE}     ${EXT_HEADER}
-	${GTC_SOURCE}     ${GTC_INLINE}     ${GTC_HEADER}
-	${GTX_SOURCE}     ${GTX_INLINE}     ${GTX_HEADER}
-	${SIMD_SOURCE}    ${SIMD_INLINE}    ${SIMD_HEADER})
-	target_link_libraries(glm_mat_1_shared PUBLIC glm_mat_1)
-	add_library(glm_mat_1::glm_mat_1_shared ALIAS glm_mat_1_shared)
-endif()
+# if(BUILD_SHARED_LIBS)
+# add_library(glm_mat_1_shared SHARED ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
+# 	${ROOT_SOURCE}    ${ROOT_INLINE}    ${ROOT_HEADER}
+# 	${CORE_SOURCE}    ${CORE_INLINE}    ${CORE_HEADER}
+# 	${EXT_SOURCE}     ${EXT_INLINE}     ${EXT_HEADER}
+# 	${GTC_SOURCE}     ${GTC_INLINE}     ${GTC_HEADER}
+# 	${GTX_SOURCE}     ${GTX_INLINE}     ${GTX_HEADER}
+# 	${SIMD_SOURCE}    ${SIMD_INLINE}    ${SIMD_HEADER})
+# 	target_link_libraries(glm_mat_1_shared PUBLIC glm_mat_1)
+# 	add_library(glm_mat_1::glm_mat_1_shared ALIAS glm_mat_1_shared)
+# endif()
