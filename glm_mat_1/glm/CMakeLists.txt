@@ -45,7 +45,11 @@ source_group("SIMD Files" FILES ${SIMD_HEADER})
 find_package(glm REQUIRED)    
 add_library(glm_mat_1 INTERFACE)
 target_include_directories(glm_mat_1 INTERFACE ../)
-target_link_libraries(glm_mat_1 INTERFACE glm::glm)
+if(TARGET glm::glm)
+    target_link_libraries(glm_mat_1 INTERFACE glm::glm)
+elseif (TARGET glm)
+    target_link_libraries(glm_mat_1 INTERFACE glm)
+endif()
 
 # without any cpp files in the library it makes no sense to build static or shared libs.
 #
