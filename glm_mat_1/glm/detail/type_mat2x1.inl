@@ -522,7 +522,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 1, T, Q> operator*(mat<2, 1, T, Q> const& m1, mat<4, 2, T, Q> const& m2)
 	{
-		return mat<4, 2, T, Q>(
+		return mat<4, 1, T, Q>(
 			m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1],
 			m1[0][0] * m2[1][0] + m1[1][0] * m2[1][1],
 			m1[0][0] * m2[2][0] + m1[1][0] * m2[2][1],
